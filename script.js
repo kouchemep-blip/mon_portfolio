@@ -6,6 +6,12 @@
 //     imageBox.style.display = "block"
 // })
 
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.body.classList.remove("preload");
+  }, 100);
+});
+
 const openMe = document.querySelector(".join1_0");
 const doingMe = document.querySelector(".view");
 

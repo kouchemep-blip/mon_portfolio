@@ -12,6 +12,10 @@
   src: url(Police/Courgette/Courgette-Regular.ttf), format(truetype);
 }
 
+.preload {
+  opacity: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1068,7 +1072,6 @@ header span a:hover {
   position: relative;
   height: 45rem;
   width: 120rem;
-  margin-top: 18rem;
   margin-bottom: 3vh;
   left: -7.5vh;
 }
