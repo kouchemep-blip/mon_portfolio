@@ -16,6 +16,20 @@
   opacity: 0;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.1s ease;
+  
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: animate5 1s ease-in-out;
+
+}
+
 * {
   margin: 0;
   padding: 0;

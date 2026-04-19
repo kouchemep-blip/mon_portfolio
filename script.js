@@ -12,6 +12,18 @@ window.addEventListener("load", () => {
   }, 1000);
 });
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
+
+document.querySelectorAll(".fade-in").forEach(el => {
+  observer.observe(el);
+});
+
 const openMe = document.querySelector(".join1_0");
 const doingMe = document.querySelector(".view");
 
