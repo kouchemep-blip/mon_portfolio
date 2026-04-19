@@ -9,7 +9,7 @@
 window.addEventListener("load", () => {
   setTimeout(() => {
     document.body.classList.remove("preload");
-  }, 2000);
+  }, 1000);
 });
 
 const openMe = document.querySelector(".join1_0");
