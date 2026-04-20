@@ -7,19 +7,25 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: Poppins;
+  src: url(Police/Poppins-SemiBold.ttf), format(truetype);
+}
+
+
 :root {
   --bg: #060d14;
   --bg2: #0b1623;
   --bg3: #0f1e2e;
   --border: rgba(0, 180, 255, 0.12);
-  --accent: #00b4ff;
+  --accent: #00abf0;
   --accent2: #fecd61;
   --accent3: #00ffb0;
   --text: #e8f0f8;
   --muted: #5a7080;
   --muted2: #8a9db0;
   --font: "Outfit", sans-serif;
-  --mono: "JetBrains Mono", monospace;
+  --mono: "Poppins", sans-serif;
   --radius: 14px;
   --nav-h: 70px;
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
@@ -290,13 +296,30 @@ section {
     color 0.25s;
   border: none;
 }
+.btn::before {
+  position: absolute;
+  left: 0%;
+  top: 0px;
+  content: "";
+  height: 100%;
+  width: 0%;
+  background: transparent;
+  transition: 0.5s;
+}
+
 .btn-primary {
   background: var(--accent);
   color: #050d14;
 }
+.btn-primary:hover::before {
+  background: #050d14;
+  width: 100%;
+  z-index: -100;
+}
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(0, 180, 255, 0.4);
+  color: var(--accent);
 }
 .btn-ghost {
   background: transparent;
@@ -308,6 +331,7 @@ section {
   border-color: var(--accent);
   transform: translateY(-3px);
 }
+
 .btn-gold {
   background: var(--accent2);
   color: #0a0a00;
