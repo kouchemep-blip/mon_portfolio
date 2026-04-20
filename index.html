@@ -1,461 +1,694 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="fr">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Prince Koucheme — Frontend Developer, Web Developer, Cybersecurity & Network Specialist."/>
-  <link rel="stylesheet" href="./style.css">
-  <title>Prince Koucheme | Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Prince Koucheme — Frontend Developer, Web Developer, Cybersecurity & Network Specialist."
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Prince Koucheme | Portfolio</title>
 
-  <!-- Fonts -->
+    <!-- Fonts -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
 
     <script src="./script.js" defer></script>
-</head>
-<body class="preload">
+  </head>
+  <body class="preload">
+    <!-- MOBILE MENU -->
 
-<!-- MOBILE MENU -->
-
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
-  <a href="#home" class="mob-link">Home</a>
-  <a href="#about" class="mob-link">About</a>
-  <a href="#services" class="mob-link">Services</a>
-  <a href="#skills" class="mob-link">Skills</a>
-  <a href="#projects" class="mob-link">Projects</a>
-  <a href="#contact" class="mob-link">Contact</a>
-</div>
-
-<!-- NAV -->
-
-<header class="nav" id="navbar" role="banner">
-  <a href="#home" class="nav-logo" aria-label="Portfolio Prince Koucheme">Prince<span>.</span></a>
-  <ul class="nav-links" role="list">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<!-- SCROLL NAV -->
-
-<div class="scroll-nav" aria-hidden="true">
-  <button class="scroll-nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Haut de page">
-    <i class="fa fa-angle-up"></i>
-  </button>
-  <button class="scroll-nav-btn" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'})" title="Bas de page">
-    <i class="fa fa-angle-down"></i>
-  </button>
-</div>
-
-<main>
-
-<!-- ===================== HERO ===================== -->
-
-<section class="hero" id="home" aria-label="Introduction">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-content">
-    <span class="hero-greeting">Hello, World!</span>
-    <h1 class="hero-name">Hi, It's<br/><em>Prince Koucheme</em></h1>
-    <div class="hero-typed">
-      And I'm a <span class="typed-accent"><span id="typing-text"></span></span>
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation"
+    >
+      <a href="#home" class="mob-link">Home</a>
+      <a href="#about" class="mob-link">About</a>
+      <a href="#services" class="mob-link">Services</a>
+      <a href="#skills" class="mob-link">Skills</a>
+      <a href="#projects" class="mob-link">Projects</a>
+      <a href="#contact" class="mob-link">Contact</a>
     </div>
-    <p class="hero-bio">
-      An aspiring systems & network specialist with solid experience in web development
-      and a strong interest in cybersecurity — backed by hands-on projects building
-      functional, impactful applications.
-    </p>
-    <div class="hero-ctas">
-      <a href="mailto:kouchemep@gmail.com" class="btn btn-primary">Hire Me <i class="fa fa-arrow-right"></i></a>
-      <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+
+    <!-- NAV -->
+
+    <header class="nav" id="navbar" role="banner">
+      <a href="#home" class="nav-logo" aria-label="Portfolio Prince Koucheme"
+        >Prince<span>.</span></a
+      >
+      <ul class="nav-links" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- SCROLL NAV -->
+
+    <div class="scroll-nav" aria-hidden="true">
+      <button
+        class="scroll-nav-btn"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        title="Haut de page"
+      >
+        <i class="fa fa-angle-up"></i>
+      </button>
+      <button
+        class="scroll-nav-btn"
+        onclick="
+          document
+            .getElementById('footer')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+        title="Bas de page"
+      >
+        <i class="fa fa-angle-down"></i>
+      </button>
     </div>
-    <div class="hero-socials" aria-label="Réseaux sociaux">
-      <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:kouchemep@gmail.com" class="social-link" aria-label="Email"><i class="fa fa-envelope"></i></a>
-    </div>
-  </div>
 
-  <div class="hero-photo-wrap" aria-hidden="true">
-    <div class="hero-glow"></div>
-    <div class="hero-photo-ring">
-      <div class="hero-photo-placeholder">👨🏾‍💻</div>
-      <!-- Replace with: <img src="./photos/photo1.png" alt="Prince Koucheme"/> -->
-    </div>
-  </div>
+    <main>
+      <!-- ===================== HERO ===================== -->
 
-  <div class="scroll-hint" aria-hidden="true">Scroll</div>
-</section>
+      <section class="hero" id="home" aria-label="Introduction">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-content">
+          <span class="hero-greeting">Hello, World!</span>
+          <h1 class="hero-name">Hi, It's<br /><em>Prince Koucheme</em></h1>
+          <div class="hero-typed">
+            And I'm a
+            <span class="typed-accent"><span id="typing-text"></span></span>
+          </div>
+          <p class="hero-bio">
+            An aspiring systems & network specialist with solid experience in
+            web development and a strong interest in cybersecurity — backed by
+            hands-on projects building functional, impactful applications.
+          </p>
+          <div class="hero-ctas">
+            <a href="mailto:kouchemep@gmail.com" class="btn btn-primary"
+              >Hire Me <i class="fa fa-arrow-right"></i
+            ></a>
+            <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+          </div>
+          <div class="hero-socials" aria-label="Réseaux sociaux">
+            <a href="#" class="social-link" aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="mailto:kouchemep@gmail.com"
+              class="social-link"
+              aria-label="Email"
+              ><i class="fa fa-envelope"></i
+            ></a>
+          </div>
+        </div>
 
-<!-- MARQUEE -->
+        <div class="hero-photo-wrap" aria-hidden="true">
+          <div class="hero-glow"></div>
+          <div class="hero-photo-ring">
+            <div class="hero-photo-placeholder">
+              <img src="./photos/photo1.png" alt="Prince Koucheme" />
+            </div>
+          </div>
+        </div>
 
-<div class="marquee-bar" aria-hidden="true">
-  <div class="marquee-track" id="marqueeTrack"></div>
-</div>
+        <div class="scroll-hint" aria-hidden="true">Scroll</div>
+      </section>
 
-<!-- ===================== ABOUT ===================== -->
+      <!-- MARQUEE -->
 
-<section class="about" id="about" aria-labelledby="about-title">
-  <div class="tag">Qui suis-je</div>
-  <h2 class="section-title reveal" id="about-title">About <span>Me</span></h2>
-  <div class="about-grid">
-    <div class="about-img-wrap reveal d1">
-      <div class="about-img-frame">
-        <div class="about-img-placeholder">🧑🏾‍💻</div>
-        <!-- Replace with: <img src="./photos/photo2.png" alt="Prince Koucheme"/> -->
+      <div class="marquee-bar" aria-hidden="true">
+        <div class="marquee-track" id="marqueeTrack"></div>
       </div>
-      <span class="about-badge">Full Stack Developer</span>
-    </div>
-    <div class="about-text reveal d2">
-      <h3>Passionate Developer &amp; Tech Enthusiast</h3>
-      <p class="about-body">
-        I am a passionate Full Stack Developer with a solid foundation in both frontend
-        and backend technologies. I build functional web applications using JavaScript,
-        React, PHP, and database systems. Through academic and personal projects, I've
-        developed strong problem-solving skills, attention to detail, and the ability
-        to work effectively in a team.<br/><br/>
-        I'm particularly interested in systems, networks, and cybersecurity, and I
-        continuously strive to expand my knowledge by learning new technologies and
-        working on practical, impactful projects.
+
+      <!-- ===================== ABOUT ===================== -->
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="tag">Qui suis-je</div>
+        <h2 class="section-title reveal" id="about-title">
+          About <span>Me</span>
+        </h2>
+        <div class="about-grid">
+          <div class="about-img-wrap reveal d1">
+            <div class="about-img-frame">
+              <div class="about-img-placeholder">
+                <img src="./photos/photo2.png" alt="Prince Koucheme" />
+              </div>
+            </div>
+            <span class="about-badge">Full Stack Developer</span>
+          </div>
+          <div class="about-text reveal d2">
+            <h3>Passionate Developer &amp; Tech Enthusiast</h3>
+            <p class="about-body">
+              I am a passionate Full Stack Developer with a solid foundation in
+              both frontend and backend technologies. I build functional web
+              applications using JavaScript, React, PHP, and database systems.
+              Through academic and personal projects, I've developed strong
+              problem-solving skills, attention to detail, and the ability to
+              work effectively in a team.<br /><br />
+              I'm particularly interested in systems, networks, and
+              cybersecurity, and I continuously strive to expand my knowledge by
+              learning new technologies and working on practical, impactful
+              projects.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <div class="stat-n" data-count="10">0</div>
+                <div class="stat-l">Technologies</div>
+              </div>
+              <div class="stat">
+                <div class="stat-n" data-count="15">0</div>
+                <div class="stat-l">Projets</div>
+              </div>
+              <div class="stat">
+                <div class="stat-n" data-count="2">0</div>
+                <div class="stat-l">Ans d'XP</div>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn-gold"
+              >More About Me <i class="fa fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SERVICES ===================== -->
+
+      <section id="services" aria-labelledby="services-title">
+        <div class="tag">Ce que je fais</div>
+        <h2 class="section-title reveal" id="services-title">
+          My <span>Services</span>
+        </h2>
+        <div class="services-grid">
+          <article class="service-card reveal d1">
+            <div class="service-icon"><i class="fa fa-paint-brush"></i></div>
+            <h3 class="service-title">UI/UX Design</h3>
+            <p class="service-desc">
+              Creating intuitive and visually engaging interfaces that enhance
+              user experience. Focused on usability, simplicity, and consistency
+              — each design is functional and user-centered.
+            </p>
+            <a href="#contact" class="btn btn-ghost">Learn More</a>
+          </article>
+          <article class="service-card reveal d2">
+            <div class="service-icon"><i class="fa fa-globe"></i></div>
+            <h3 class="service-title">Web Design</h3>
+            <p class="service-desc">
+              Modern, responsive websites with a strong focus on aesthetics and
+              UX. Clean, engaging, and functional interfaces that deliver a
+              seamless experience on all devices.
+            </p>
+            <a href="#contact" class="btn btn-ghost">Learn More</a>
+          </article>
+          <article class="service-card reveal d3">
+            <div class="service-icon"><i class="fa fa-mobile-alt"></i></div>
+            <h3 class="service-title">App Design</h3>
+            <p class="service-desc">
+              Intuitive mobile application interfaces with a focus on usability.
+              Clean, functional, and visually consistent designs that make
+              interaction simple and efficient.
+            </p>
+            <a href="#contact" class="btn btn-ghost">Learn More</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== SKILLS ===================== -->
+
+      <section
+        class="skills-section"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="tag">Expertises</div>
+        <h2 class="section-title reveal" id="skills-title">
+          My <span>Skills</span>
+        </h2>
+        <div class="skills-wrapper">
+          <!-- Technical bars -->
+          <div class="reveal d1">
+            <h3 class="skills-block-title">Technical Skills</h3>
+            <div class="tech-bars" id="techBars">
+              <div class="tech-bar" data-pct="90">
+                <div class="tech-bar-header">
+                  <span class="tech-bar-name"
+                    ><i class="fab fa-html5" style="color: #e65100"></i>
+                    HTML</span
+                  >
+                  <span class="tech-bar-pct">90%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" data-w="90"></div>
+                </div>
+              </div>
+              <div class="tech-bar" data-pct="60">
+                <div class="tech-bar-header">
+                  <span class="tech-bar-name"
+                    ><i class="fab fa-css3-alt" style="color: #7e57c2"></i>
+                    CSS</span
+                  >
+                  <span class="tech-bar-pct">60%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" data-w="60"></div>
+                </div>
+              </div>
+              <div class="tech-bar" data-pct="37">
+                <div class="tech-bar-header">
+                  <span class="tech-bar-name"
+                    ><i class="fab fa-js" style="color: #ffca28"></i>
+                    JavaScript</span
+                  >
+                  <span class="tech-bar-pct">37%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" data-w="37"></div>
+                </div>
+              </div>
+              <div class="tech-bar" data-pct="50">
+                <div class="tech-bar-header">
+                  <span class="tech-bar-name"
+                    ><i class="fab fa-python" style="color: #498ba7"></i>
+                    Python</span
+                  >
+                  <span class="tech-bar-pct">50%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" data-w="50"></div>
+                </div>
+              </div>
+              <div class="tech-bar" data-pct="45">
+                <div class="tech-bar-header">
+                  <span class="tech-bar-name"
+                    ><i class="fab fa-bootstrap" style="color: #7d29fe"></i>
+                    Bootstrap</span
+                  >
+                  <span class="tech-bar-pct">45%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" data-w="45"></div>
+                </div>
+              </div>
+              <div class="tech-bar" data-pct="35">
+                <div class="tech-bar-header">
+                  <span class="tech-bar-name"
+                    ><i class="fab fa-react" style="color: #00bcd4"></i>
+                    React</span
+                  >
+                  <span class="tech-bar-pct">35%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" data-w="35"></div>
+                </div>
+              </div>
+              <div class="tech-bar" data-pct="50">
+                <div class="tech-bar-header">
+                  <span class="tech-bar-name"
+                    ><i class="fab fa-php" style="color: #1e88e5"></i> PHP</span
+                  >
+                  <span class="tech-bar-pct">50%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" data-w="50"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          ```
+          <!-- Radial / professional skills -->
+          <div class="reveal d2">
+            <h3 class="skills-block-title">Professional Skills</h3>
+            <div class="pro-grid">
+              <div class="radial-card">
+                <div class="radial-svg-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="radial-track" cx="50" cy="50" r="40" />
+                    <circle
+                      class="radial-fill"
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      data-pct="90"
+                      style="stroke-dashoffset: 251"
+                    />
+                  </svg>
+                  <div class="radial-pct">90%</div>
+                </div>
+                <div class="radial-label">Creativity</div>
+              </div>
+              <div class="radial-card">
+                <div class="radial-svg-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="radial-track" cx="50" cy="50" r="40" />
+                    <circle
+                      class="radial-fill"
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      data-pct="65"
+                      style="stroke-dashoffset: 251"
+                    />
+                  </svg>
+                  <div class="radial-pct">65%</div>
+                </div>
+                <div class="radial-label">Communication</div>
+              </div>
+              <div class="radial-card">
+                <div class="radial-svg-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="radial-track" cx="50" cy="50" r="40" />
+                    <circle
+                      class="radial-fill"
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      data-pct="95"
+                      style="stroke-dashoffset: 251"
+                    />
+                  </svg>
+                  <div class="radial-pct">95%</div>
+                </div>
+                <div class="radial-label">Problem Solving</div>
+              </div>
+              <div class="radial-card">
+                <div class="radial-svg-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="radial-track" cx="50" cy="50" r="40" />
+                    <circle
+                      class="radial-fill"
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      data-pct="85"
+                      style="stroke-dashoffset: 251"
+                    />
+                  </svg>
+                  <div class="radial-pct">85%</div>
+                </div>
+                <div class="radial-label">Teamwork</div>
+              </div>
+              <div class="radial-card">
+                <div class="radial-svg-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="radial-track" cx="50" cy="50" r="40" />
+                    <circle
+                      class="radial-fill"
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      data-pct="92"
+                      style="stroke-dashoffset: 251"
+                    />
+                  </svg>
+                  <div class="radial-pct">92%</div>
+                </div>
+                <div class="radial-label">Adaptability</div>
+              </div>
+              <div class="radial-card">
+                <div class="radial-svg-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="radial-track" cx="50" cy="50" r="40" />
+                    <circle
+                      class="radial-fill"
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      data-pct="83"
+                      style="stroke-dashoffset: 251"
+                    />
+                  </svg>
+                  <div class="radial-pct">83%</div>
+                </div>
+                <div class="radial-label">Organisation</div>
+              </div>
+            </div>
+          </div>
+          ```
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+
+      <section id="projects" aria-labelledby="projects-title">
+        <div class="tag">Réalisations</div>
+        <h2 class="section-title reveal" id="projects-title">
+          Latest <span>Projects</span>
+        </h2>
+        <div class="projects-grid">
+          <article
+            class="project-card reveal d1"
+            style="--thumb-grad: linear-gradient(135deg, #060d20, #0b1a40)"
+          >
+            <div class="project-thumb">
+              <div class="project-thumb-bg"></div>
+              <div class="project-thumb-grid"></div>
+              <div class="project-thumb-icon">🎨</div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-tag">UI/UX</span>
+                <span class="project-tag">Design</span>
+              </div>
+              <h3 class="project-title">UI/UX Design Project</h3>
+              <p class="project-desc">
+                Designing intuitive user interfaces with focus on usability,
+                accessibility and visual hierarchy for modern digital products.
+              </p>
+              <a href="#" class="project-link"
+                >View Project <i class="bx bx-link-external"></i
+              ></a>
+            </div>
+          </article>
+          <article
+            class="project-card reveal d2"
+            style="--thumb-grad: linear-gradient(135deg, #060d14, #0a2030)"
+          >
+            <div class="project-thumb">
+              <div class="project-thumb-bg"></div>
+              <div class="project-thumb-grid"></div>
+              <div class="project-thumb-icon">🌐</div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-tag">Web</span>
+                <span class="project-tag">Frontend</span>
+              </div>
+              <h3 class="project-title">Web Application</h3>
+              <p class="project-desc">
+                A responsive, full-featured web application with modern UI,
+                real-time interactions, and clean code architecture.
+              </p>
+              <a href="#" class="project-link"
+                >View Project <i class="bx bx-link-external"></i
+              ></a>
+            </div>
+          </article>
+          <article
+            class="project-card reveal d3"
+            style="--thumb-grad: linear-gradient(135deg, #0a1005, #182a08)"
+          >
+            <div class="project-thumb">
+              <div class="project-thumb-bg"></div>
+              <div class="project-thumb-grid"></div>
+              <div class="project-thumb-icon">📱</div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-tag">App</span>
+                <span class="project-tag">Mobile</span>
+              </div>
+              <h3 class="project-title">App Interface Design</h3>
+              <p class="project-desc">
+                Mobile-first application interface designed for intuitive
+                navigation, clean aesthetics, and seamless user flow.
+              </p>
+              <a href="#" class="project-link"
+                >View Project <i class="bx bx-link-external"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT / JOIN ===================== -->
+
+      <section class="join" id="contact" aria-labelledby="contact-title">
+        <div class="tag">Collaboration</div>
+        <h2 class="section-title reveal" id="contact-title">
+          Join <span>Me</span>
+        </h2>
+        <div class="join-grid">
+          <div class="reveal d1">
+            <p class="join-subtitle" id="joinTyping">
+              What about working together ?
+            </p>
+            <p class="join-desc">
+              I'm currently open to freelance opportunities, collaborations, and
+              innovative projects in web development, UI/UX, and app design. I'm
+              always eager to learn, improve, and contribute to impactful
+              projects.<br /><br />
+              Feel free to reach out — let's discuss how I can help bring your
+              ideas to life.
+            </p>
+            <div class="join-contacts">
+              <div class="join-contact-item">
+                <i class="bx bxl-gmail"></i>
+                <span>kouchemep@gmail.com</span>
+              </div>
+              <div class="join-contact-item">
+                <i class="bx bxs-phone"></i>
+                <span>01 54 11 09 30</span>
+              </div>
+            </div>
+
+            ```
+            <!-- Previous work -->
+            <div class="prev-work reveal d2">
+              <div class="prev-work-title">Previously built →</div>
+              <div class="prev-work-links">
+                <a href="/Mon_premier_site_web/index.html"
+                  ><i class="fa fa-file-code"></i> Mon premier site web</a
+                >
+                <a href="/Mon_deuxième_site_web/"
+                  ><i class="fa fa-file-code"></i> Mon deuxième site web</a
+                >
+                <a href="/Mon_troisième_site_web/"
+                  ><i class="fa fa-file-code"></i> Mon troisième site web</a
+                >
+                <a href="/Mon_quatrième_site_web/"
+                  ><i class="fa fa-file-code"></i> Mon quatrième site web</a
+                >
+                <a href="/Mon_cinquième_site_web/"
+                  ><i class="fa fa-file-code"></i> Mon cinquième site web</a
+                >
+                <a href="/etudiant_uac/index.html"
+                  ><i class="fa fa-file-code"></i> Espace étudiant UAC</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <form
+            class="contact-form reveal d2"
+            id="contactForm"
+            novalidate
+            aria-label="Formulaire de contact"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="c-nom">Nom</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="c-nom"
+                  name="nom"
+                  placeholder="Mon Nom"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-email">E-mail</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="c-email"
+                  name="email"
+                  placeholder="exemple@gmail.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-tel">Contact</label>
+              <input
+                class="form-input"
+                type="tel"
+                id="c-tel"
+                name="number"
+                placeholder="00 00 00 00 00"
+                autocomplete="tel"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-msg">Message</label>
+              <textarea
+                class="form-textarea"
+                id="c-msg"
+                name="message"
+                placeholder="Je vous contacte pour..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              Envoyer <i class="fa fa-paper-plane"></i>
+            </button>
+            <div
+              class="form-success"
+              id="formSuccess"
+              role="alert"
+              aria-live="polite"
+            >
+              ✓ Message envoyé ! Je vous répondrai dans les 24h.
+            </div>
+          </form>
+          ```
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+      <div class="footer-logo">Prince<span>.</span></div>
+      <p class="footer-credit">
+        Développé avec ❤️ par <strong>Mr. Souverain Koucheme</strong> — © 2025
+        All rights reserved
       </p>
-      <div class="about-stats">
-        <div class="stat">
-          <div class="stat-n" data-count="10">0</div>
-          <div class="stat-l">Technologies</div>
-        </div>
-        <div class="stat">
-          <div class="stat-n" data-count="15">0</div>
-          <div class="stat-l">Projets</div>
-        </div>
-        <div class="stat">
-          <div class="stat-n" data-count="2">0</div>
-          <div class="stat-l">Ans d'XP</div>
-        </div>
-      </div>
-      <a href="#contact" class="btn btn-gold">More About Me <i class="fa fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SERVICES ===================== -->
-
-<section id="services" aria-labelledby="services-title">
-  <div class="tag">Ce que je fais</div>
-  <h2 class="section-title reveal" id="services-title">My <span>Services</span></h2>
-  <div class="services-grid">
-    <article class="service-card reveal d1">
-      <div class="service-icon"><i class="fa fa-paint-brush"></i></div>
-      <h3 class="service-title">UI/UX Design</h3>
-      <p class="service-desc">Creating intuitive and visually engaging interfaces that enhance user experience. Focused on usability, simplicity, and consistency — each design is functional and user-centered.</p>
-      <a href="#contact" class="btn btn-ghost">Learn More</a>
-    </article>
-    <article class="service-card reveal d2">
-      <div class="service-icon"><i class="fa fa-globe"></i></div>
-      <h3 class="service-title">Web Design</h3>
-      <p class="service-desc">Modern, responsive websites with a strong focus on aesthetics and UX. Clean, engaging, and functional interfaces that deliver a seamless experience on all devices.</p>
-      <a href="#contact" class="btn btn-ghost">Learn More</a>
-    </article>
-    <article class="service-card reveal d3">
-      <div class="service-icon"><i class="fa fa-mobile-alt"></i></div>
-      <h3 class="service-title">App Design</h3>
-      <p class="service-desc">Intuitive mobile application interfaces with a focus on usability. Clean, functional, and visually consistent designs that make interaction simple and efficient.</p>
-      <a href="#contact" class="btn btn-ghost">Learn More</a>
-    </article>
-  </div>
-</section>
-
-<!-- ===================== SKILLS ===================== -->
-
-<section class="skills-section" id="skills" aria-labelledby="skills-title">
-  <div class="tag">Expertises</div>
-  <h2 class="section-title reveal" id="skills-title">My <span>Skills</span></h2>
-  <div class="skills-wrapper">
-    <!-- Technical bars -->
-    <div class="reveal d1">
-      <h3 class="skills-block-title">Technical Skills</h3>
-      <div class="tech-bars" id="techBars">
-        <div class="tech-bar" data-pct="90">
-          <div class="tech-bar-header">
-            <span class="tech-bar-name"><i class="fab fa-html5" style="color:#e65100"></i> HTML</span>
-            <span class="tech-bar-pct">90%</span>
-          </div>
-          <div class="tech-bar-track"><div class="tech-bar-fill" data-w="90"></div></div>
-        </div>
-        <div class="tech-bar" data-pct="60">
-          <div class="tech-bar-header">
-            <span class="tech-bar-name"><i class="fab fa-css3-alt" style="color:#7e57c2"></i> CSS</span>
-            <span class="tech-bar-pct">60%</span>
-          </div>
-          <div class="tech-bar-track"><div class="tech-bar-fill" data-w="60"></div></div>
-        </div>
-        <div class="tech-bar" data-pct="37">
-          <div class="tech-bar-header">
-            <span class="tech-bar-name"><i class="fab fa-js" style="color:#ffca28"></i> JavaScript</span>
-            <span class="tech-bar-pct">37%</span>
-          </div>
-          <div class="tech-bar-track"><div class="tech-bar-fill" data-w="37"></div></div>
-        </div>
-        <div class="tech-bar" data-pct="50">
-          <div class="tech-bar-header">
-            <span class="tech-bar-name"><i class="fab fa-python" style="color:#498ba7"></i> Python</span>
-            <span class="tech-bar-pct">50%</span>
-          </div>
-          <div class="tech-bar-track"><div class="tech-bar-fill" data-w="50"></div></div>
-        </div>
-        <div class="tech-bar" data-pct="45">
-          <div class="tech-bar-header">
-            <span class="tech-bar-name"><i class="fab fa-bootstrap" style="color:#7d29fe"></i> Bootstrap</span>
-            <span class="tech-bar-pct">45%</span>
-          </div>
-          <div class="tech-bar-track"><div class="tech-bar-fill" data-w="45"></div></div>
-        </div>
-        <div class="tech-bar" data-pct="35">
-          <div class="tech-bar-header">
-            <span class="tech-bar-name"><i class="fab fa-react" style="color:#00BCD4"></i> React</span>
-            <span class="tech-bar-pct">35%</span>
-          </div>
-          <div class="tech-bar-track"><div class="tech-bar-fill" data-w="35"></div></div>
-        </div>
-        <div class="tech-bar" data-pct="50">
-          <div class="tech-bar-header">
-            <span class="tech-bar-name"><i class="fab fa-php" style="color:#1E88E5"></i> PHP</span>
-            <span class="tech-bar-pct">50%</span>
-          </div>
-          <div class="tech-bar-track"><div class="tech-bar-fill" data-w="50"></div></div>
-        </div>
-      </div>
-    </div>
-
-```
-<!-- Radial / professional skills -->
-<div class="reveal d2">
-  <h3 class="skills-block-title">Professional Skills</h3>
-  <div class="pro-grid">
-    <div class="radial-card">
-      <div class="radial-svg-wrap">
-        <svg viewBox="0 0 100 100">
-          <circle class="radial-track" cx="50" cy="50" r="40"/>
-          <circle class="radial-fill" cx="50" cy="50" r="40" data-pct="90" style="stroke-dashoffset:251"/>
-        </svg>
-        <div class="radial-pct">90%</div>
-      </div>
-      <div class="radial-label">Creativity</div>
-    </div>
-    <div class="radial-card">
-      <div class="radial-svg-wrap">
-        <svg viewBox="0 0 100 100">
-          <circle class="radial-track" cx="50" cy="50" r="40"/>
-          <circle class="radial-fill" cx="50" cy="50" r="40" data-pct="65" style="stroke-dashoffset:251"/>
-        </svg>
-        <div class="radial-pct">65%</div>
-      </div>
-      <div class="radial-label">Communication</div>
-    </div>
-    <div class="radial-card">
-      <div class="radial-svg-wrap">
-        <svg viewBox="0 0 100 100">
-          <circle class="radial-track" cx="50" cy="50" r="40"/>
-          <circle class="radial-fill" cx="50" cy="50" r="40" data-pct="95" style="stroke-dashoffset:251"/>
-        </svg>
-        <div class="radial-pct">95%</div>
-      </div>
-      <div class="radial-label">Problem Solving</div>
-    </div>
-    <div class="radial-card">
-      <div class="radial-svg-wrap">
-        <svg viewBox="0 0 100 100">
-          <circle class="radial-track" cx="50" cy="50" r="40"/>
-          <circle class="radial-fill" cx="50" cy="50" r="40" data-pct="85" style="stroke-dashoffset:251"/>
-        </svg>
-        <div class="radial-pct">85%</div>
-      </div>
-      <div class="radial-label">Teamwork</div>
-    </div>
-    <div class="radial-card">
-      <div class="radial-svg-wrap">
-        <svg viewBox="0 0 100 100">
-          <circle class="radial-track" cx="50" cy="50" r="40"/>
-          <circle class="radial-fill" cx="50" cy="50" r="40" data-pct="92" style="stroke-dashoffset:251"/>
-        </svg>
-        <div class="radial-pct">92%</div>
-      </div>
-      <div class="radial-label">Adaptability</div>
-    </div>
-    <div class="radial-card">
-      <div class="radial-svg-wrap">
-        <svg viewBox="0 0 100 100">
-          <circle class="radial-track" cx="50" cy="50" r="40"/>
-          <circle class="radial-fill" cx="50" cy="50" r="40" data-pct="83" style="stroke-dashoffset:251"/>
-        </svg>
-        <div class="radial-pct">83%</div>
-      </div>
-      <div class="radial-label">Organisation</div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-</section>
-
-<!-- ===================== PROJECTS ===================== -->
-
-<section id="projects" aria-labelledby="projects-title">
-  <div class="tag">Réalisations</div>
-  <h2 class="section-title reveal" id="projects-title">Latest <span>Projects</span></h2>
-  <div class="projects-grid">
-    <article class="project-card reveal d1"
-      style="--thumb-grad: linear-gradient(135deg, #060d20, #0b1a40);">
-      <div class="project-thumb">
-        <div class="project-thumb-bg"></div>
-        <div class="project-thumb-grid"></div>
-        <div class="project-thumb-icon">🎨</div>
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="project-tag">UI/UX</span>
-          <span class="project-tag">Design</span>
-        </div>
-        <h3 class="project-title">UI/UX Design Project</h3>
-        <p class="project-desc">Designing intuitive user interfaces with focus on usability, accessibility and visual hierarchy for modern digital products.</p>
-        <a href="#" class="project-link">View Project <i class="bx bx-link-external"></i></a>
-      </div>
-    </article>
-    <article class="project-card reveal d2"
-      style="--thumb-grad: linear-gradient(135deg, #060d14, #0a2030);">
-      <div class="project-thumb">
-        <div class="project-thumb-bg"></div>
-        <div class="project-thumb-grid"></div>
-        <div class="project-thumb-icon">🌐</div>
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="project-tag">Web</span>
-          <span class="project-tag">Frontend</span>
-        </div>
-        <h3 class="project-title">Web Application</h3>
-        <p class="project-desc">A responsive, full-featured web application with modern UI, real-time interactions, and clean code architecture.</p>
-        <a href="#" class="project-link">View Project <i class="bx bx-link-external"></i></a>
-      </div>
-    </article>
-    <article class="project-card reveal d3"
-      style="--thumb-grad: linear-gradient(135deg, #0a1005, #182a08);">
-      <div class="project-thumb">
-        <div class="project-thumb-bg"></div>
-        <div class="project-thumb-grid"></div>
-        <div class="project-thumb-icon">📱</div>
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="project-tag">App</span>
-          <span class="project-tag">Mobile</span>
-        </div>
-        <h3 class="project-title">App Interface Design</h3>
-        <p class="project-desc">Mobile-first application interface designed for intuitive navigation, clean aesthetics, and seamless user flow.</p>
-        <a href="#" class="project-link">View Project <i class="bx bx-link-external"></i></a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ===================== CONTACT / JOIN ===================== -->
-
-<section class="join" id="contact" aria-labelledby="contact-title">
-  <div class="tag">Collaboration</div>
-  <h2 class="section-title reveal" id="contact-title">Join <span>Me</span></h2>
-  <div class="join-grid">
-    <div class="reveal d1">
-      <p class="join-subtitle" id="joinTyping">What about working together ?</p>
-      <p class="join-desc">
-        I'm currently open to freelance opportunities, collaborations, and innovative
-        projects in web development, UI/UX, and app design. I'm always eager to learn,
-        improve, and contribute to impactful projects.<br/><br/>
-        Feel free to reach out — let's discuss how I can help bring your ideas to life.
-      </p>
-      <div class="join-contacts">
-        <div class="join-contact-item">
-          <i class="bx bxl-gmail"></i>
-          <span>kouchemep@gmail.com</span>
-        </div>
-        <div class="join-contact-item">
-          <i class="bx bxs-phone"></i>
-          <span>01 54 11 09 30</span>
-        </div>
-      </div>
-
-```
-  <!-- Previous work -->
-  <div class="prev-work reveal d2">
-    <div class="prev-work-title">Previously built →</div>
-    <div class="prev-work-links">
-      <a href="/Mon_premier_site_web/index.html"><i class="fa fa-file-code"></i> Mon premier site web</a>
-      <a href="/Mon_deuxième_site_web/"><i class="fa fa-file-code"></i> Mon deuxième site web</a>
-      <a href="/Mon_troisième_site_web/"><i class="fa fa-file-code"></i> Mon troisième site web</a>
-      <a href="/Mon_quatrième_site_web/"><i class="fa fa-file-code"></i> Mon quatrième site web</a>
-      <a href="/Mon_cinquième_site_web/"><i class="fa fa-file-code"></i> Mon cinquième site web</a>
-      <a href="/etudiant_uac/index.html"><i class="fa fa-file-code"></i> Espace étudiant UAC</a>
-    </div>
-  </div>
-</div>
-
-<form class="contact-form reveal d2" id="contactForm" novalidate aria-label="Formulaire de contact">
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label" for="c-nom">Nom</label>
-      <input class="form-input" type="text" id="c-nom" name="nom" placeholder="Mon Nom" autocomplete="name" required/>
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="c-email">E-mail</label>
-      <input class="form-input" type="email" id="c-email" name="email" placeholder="exemple@gmail.com" autocomplete="email" required/>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="form-label" for="c-tel">Contact</label>
-    <input class="form-input" type="tel" id="c-tel" name="number" placeholder="00 00 00 00 00" autocomplete="tel"/>
-  </div>
-  <div class="form-group">
-    <label class="form-label" for="c-msg">Message</label>
-    <textarea class="form-textarea" id="c-msg" name="message" placeholder="Je vous contacte pour..." required></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary form-submit">Envoyer <i class="fa fa-paper-plane"></i></button>
-  <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
-    ✓ Message envoyé ! Je vous répondrai dans les 24h.
-  </div>
-</form>
-```
-
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer id="footer">
-  <div class="footer-logo">Prince<span>.</span></div>
-  <p class="footer-credit">Développé avec ❤️ par <strong>Mr. Souverain Koucheme</strong> — © 2025 All rights reserved</p>
-  <nav class="footer-links" aria-label="Footer navigation">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</footer>
-
-
-
-</body>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </footer>
+  </body>
 </html>
