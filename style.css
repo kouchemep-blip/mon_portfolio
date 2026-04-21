@@ -12,7 +12,6 @@
   src: url(Police/Poppins-SemiBold.ttf), format(truetype);
 }
 
-
 :root {
   --bg: #060d14;
   --bg2: #0b1623;
@@ -137,7 +136,7 @@ body::before {
   padding-bottom: 4px;
 }
 .nav-links a::after {
-  content: "";
+  /* content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -146,14 +145,40 @@ body::before {
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.3s var(--ease);
+  transition: transform 0.3s var(--ease); */
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: -0.4rem;
+  height: 2.5px;
+  width: 0;
+  padding: 2px;
+  transition: 0.2s ease-in-out;
+}
+.nav-links a::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: -0.5rem;
+  height: 2.5px;
+  width: 0;
+  padding: 2px;
+  transition: 0.2s ease-in-out;
 }
 .nav-links a:hover {
   color: var(--text);
 }
 .nav-links a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  /* transform: scaleX(1);
+  transform-origin: left; */
+  border-right: 2.5px solid #00abf0;
+  border-bottom: 2.5px solid #00abf0;
+}
+.nav-links a:hover::before {
+  /* transform: scaleX(1);
+  transform-origin: left; */
+  border-left: 2.5px solid #00abf0;
+  border-top: 2.5px solid #00abf0;
 }
 
 /* Hamburger */
@@ -296,30 +321,15 @@ section {
     color 0.25s;
   border: none;
 }
-.btn::before {
-  position: absolute;
-  left: 0%;
-  top: 0px;
-  content: "";
-  height: 100%;
-  width: 0%;
-  background: transparent;
-  transition: 0.5s;
-}
 
 .btn-primary {
   background: var(--accent);
   color: #050d14;
 }
-.btn-primary:hover::before {
-  background: #050d14;
-  width: 100%;
-  z-index: -100;
-}
+
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(0, 180, 255, 0.4);
-  color: var(--accent);
 }
 .btn-ghost {
   background: transparent;
@@ -832,7 +842,7 @@ section {
 }
 .skills-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:  1fr;
   gap: clamp(3rem, 6vw, 6rem);
   margin-top: 3.5rem;
   align-items: start;
