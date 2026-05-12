@@ -34,7 +34,7 @@ const PROJECTS = [
     tags: ['Web', 'Frontend'],
     title: 'Web Application',
     desc: 'A responsive, full-featured web application with modern UI, real-time interactions, and clean code architecture.',
-    link: 'https://margueriteoke-don-genial.netlify.app/',
+    link: 'https://margueriteoke-don-genial-officiel.netlify.app/',
   },
   {
     thumb: '/photos/projet3.png',
