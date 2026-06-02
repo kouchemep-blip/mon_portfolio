@@ -1,115 +1,50 @@
-# 👨‍💻 Prince Koucheme - Portfolio
+# Prince Koucheme Portfolio
 
-Bienvenue sur mon portfolio personnel !
+Portfolio personnel de Prince Koucheme, construit avec React et Vite. Le site presente son profil, ses services, ses competences, ses projets et un formulaire de contact dans une interface sombre, technique et responsive.
 
-Ce site présente mon parcours, mes compétences, mes projets et mes centres d'intérêt dans le domaine du développement web, de l'administration réseau, de la cybersécurité et de l'intelligence artificielle.
+## Stack
 
-## 🚀 Aperçu
-
-🔗 Site en ligne : [https://votre-site.vercel.app](https://votre-site.vercel.app)
-
-## ✨ Fonctionnalités
-
-- Design moderne et responsive
-- Présentation personnelle
-- Mise en avant des compétences techniques
-- Galerie de projets
-- Formulaire de contact
-- Optimisé pour mobile, tablette et desktop
-- Animations fluides et expérience utilisateur soignée
-
-## 🛠️ Technologies utilisées
-
-### Frontend
-
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- React
+- React 18
 - Vite
-- Tailwind CSS
+- React Router
+- Framer Motion
+- GSAP
+- Three.js
+- CSS custom properties
 
-### Outils
-
-- Git
-- GitHub
-- Vercel
-
-## 📂 Structure du projet
-
-```text
-src/
-├── assets/
-├── components/
-├── pages/
-├── hooks/
-├── data/
-├── App.jsx
-├── main.jsx
-└── index.css
-```
-
-## ⚙️ Installation locale
-
-Clonez le dépôt :
-
-```bash
-git clone https://github.com/votre-username/votre-repo.git
-```
-
-Accédez au dossier :
-
-```bash
-cd votre-repo
-```
-
-Installez les dépendances :
+## Installation
 
 ```bash
 npm install
 ```
 
-Lancez le serveur de développement :
+## Developpement
 
 ```bash
 npm run dev
 ```
 
-Construisez la version de production :
+Le serveur Vite affiche ensuite l'URL locale a ouvrir dans le navigateur.
+
+## Build
 
 ```bash
 npm run build
 ```
 
-## 📸 Captures d'écran
+## Apercu de production
 
-Ajoutez ici des captures d'écran de votre portfolio.
+```bash
+npm run preview
+```
 
-## 📚 Compétences
+## Structure
 
-- Développement Web Frontend
-- React & Écosystème Moderne
-- JavaScript
-- Administration Réseau
-- Cybersécurité
-- Intelligence Artificielle
-- Bases de données
+- `src/components` : sections et composants reutilisables.
+- `src/pages` : pages principales et pages de detail.
+- `src/index.css` : theme global, responsive et styles des sections.
+- `public` : assets statiques, favicon, manifest, sitemap et robots.
 
-## 🎯 Objectifs
+## Deploiement
 
-Mon objectif est de développer des solutions modernes, performantes et sécurisées tout en continuant à approfondir mes connaissances en cybersécurité et en intelligence artificielle.
-
-## 📬 Contact
-
-- Email : [votre-email]
-- LinkedIn : [votre-lien-linkedin]
-- GitHub : [votre-github]
-- Portfolio : [votre-site]
-
-## 📄 Licence
-
-Ce projet est distribué sous licence MIT.
-
----
-
-⭐ N'hésitez pas à explorer le projet et à laisser une étoile si vous l'appréciez !
+Le projet contient une configuration Netlify via `netlify.toml`. Apres un build, le dossier de sortie Vite peut etre deploye sur Netlify.
