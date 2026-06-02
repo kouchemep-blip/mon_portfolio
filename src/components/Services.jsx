@@ -1,26 +1,25 @@
-// Services.jsx
-// Les 3 cartes de services : UI/UX Design, Web Design, App Design.
-// Chaque carte a une icône, un titre, une description et un bouton.
-// L'animation d'apparition (reveal) se déclenche quand la section est visible.
-
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 function useInView(threshold = 0.12) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
+
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setInView(true);
           obs.disconnect();
         }
       },
       { threshold },
     );
+
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
   }, [threshold]);
+
   return [ref, inView];
 }
 
@@ -28,17 +27,20 @@ const SERVICES = [
   {
     icon: "fa fa-paint-brush",
     title: "UI/UX Design",
-    desc: "Creating intuitive and visually engaging interfaces that enhance user experience. Focused on usability, simplicity, and consistency — each design is functional and user-centered.",
+    slug: "ui-ux-design",
+    desc: "Conception d'interfaces claires, modernes et agreables a utiliser. Je travaille la hierarchie visuelle, les parcours utilisateurs et les details qui rendent une experience fluide.",
   },
   {
     icon: "fa fa-globe",
     title: "Web Design",
-    desc: "Modern, responsive websites with a strong focus on aesthetics and UX. Clean, engaging, and functional interfaces that deliver a seamless experience on all devices.",
+    slug: "web-design",
+    desc: "Creation de sites responsives, elegants et coherents avec votre image. L'objectif est d'obtenir une interface lisible, rapide a comprendre et adaptee a tous les ecrans.",
   },
   {
     icon: "fa fa-mobile-alt",
     title: "App Design",
-    desc: "Intuitive mobile application interfaces with a focus on usability. Clean, functional, and visually consistent designs that make interaction simple and efficient.",
+    slug: "app-design",
+    desc: "Design d'applications mobiles simples a prendre en main, avec des ecrans organises, des interactions naturelles et une experience pensee pour l'usage quotidien.",
   },
 ];
 
@@ -53,11 +55,11 @@ export default function Services() {
         className={`section-title reveal${inView ? " up" : ""}`}
         id="services-title"
       >
-        My <span>Services</span>
+        Mes <span>Services</span>
       </h2>
 
       <div className="services-grid">
-        {SERVICES.map(({ icon, title, desc }, i) => (
+        {SERVICES.map(({ icon, title, slug, desc }, i) => (
           <article
             key={title}
             className={`service-card reveal d${i + 1}${inView ? " up" : ""}`}
@@ -67,9 +69,9 @@ export default function Services() {
             </div>
             <h3 className="service-title">{title}</h3>
             <p className="service-desc">{desc}</p>
-            <a href="#contact" className="btn btn-ghost">
-              Learn More
-            </a>
+            <Link to={`/services/${slug}`} className="btn btn-ghost">
+              En savoir plus
+            </Link>
           </article>
         ))}
       </div>

@@ -1,0 +1,13 @@
+{
+  "name": "Prince Koucheme — Portfolio",
+  "short_name": "Prince.",
+  "description": "Frontend Developer & UI/UX Designer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060d14",
+  "theme_color": "#00abf0",
+  "icons": [
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -7,12 +7,31 @@
 // dans tous les cas.
 
 import { useState, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar    from './components/Navbar'
 import ScrollNav from './components/ScrollNav'
 import Loader    from './components/Loader'
 import Home      from './pages/Home'
+import ServiceDetail from './pages/ServiceDetail'
 import NotFound  from './pages/NotFound'
+
+function HashScroll() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+
+    const timer = setTimeout(() => {
+      document
+        .getElementById(hash.slice(1))
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [pathname, hash])
+
+  return null
+}
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -46,10 +65,12 @@ export default function App() {
 
       {/* Site principal — invisible pendant le chargement */}
       <div style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
+        <HashScroll />
         <Navbar />
         <ScrollNav />
         <Routes>
           <Route path="/"  element={<Home />} />
+          <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="*"  element={<NotFound />} />
         </Routes>
       </div>

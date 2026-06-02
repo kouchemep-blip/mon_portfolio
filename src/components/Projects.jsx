@@ -22,14 +22,16 @@ function useInView(threshold = 0.12) {
 const PROJECTS = [
   {
     thumb: '/photos/projet1.png',
+    loading : "lazy",
     grad: 'linear-gradient(135deg, #060d20, #0b1a40)',
     tags: ['UI/UX', 'Design'],
     title: 'UI/UX Design Project',
     desc: 'Designing intuitive user interfaces with focus on usability, accessibility and visual hierarchy for modern digital products.',
-    link: '#',
+    link: 'https://linosfoodofficiel.vercel.app/',
   },
   {
     thumb: '/photos/projet2.png',
+    loading : "lazy",
     grad: 'linear-gradient(135deg, #060d14, #0a2030)',
     tags: ['Web', 'Frontend'],
     title: 'Web Application',
@@ -38,6 +40,7 @@ const PROJECTS = [
   },
   {
     thumb: '/photos/projet3.png',
+    loading : "lazy",
     grad: 'linear-gradient(135deg, #0a1005, #182a08)',
     tags: ['App', 'Mobile'],
     title: 'App Interface Design',

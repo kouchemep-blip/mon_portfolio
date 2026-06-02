@@ -19,7 +19,8 @@
   --muted: #5a7080;
   --muted2: #8a9db0;
   --font: "Outfit", sans-serif;
-  --mono: "Poppins", sans-serif, format(truetype);
+  /* --mono: "Poppins", sans-serif, format(truetype); */
+  --mono: "JetBrains Mono", "Outfit", monospace;
   --radius: 14px;
   --nav-h: 70px;
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
@@ -161,16 +162,19 @@ body::before {
   padding: 2px;
   transition: 0.2s ease-in-out;
 }
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--text);
 }
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   /* transform: scaleX(1);
   transform-origin: left; */
   border-right: 2.5px solid #00abf0;
   border-bottom: 2.5px solid #00abf0;
 }
-.nav-links a:hover::before {
+.nav-links a:hover::before,
+.nav-links a.active::before {
   /* transform: scaleX(1);
   transform-origin: left; */
   border-left: 2.5px solid #00abf0;
@@ -234,7 +238,8 @@ body::before {
   color: var(--text);
   transition: color 0.25s;
 }
-.mobile-menu a:hover {
+.mobile-menu a:hover,
+.mobile-menu a.active {
   color: var(--accent);
 }
 
@@ -780,6 +785,7 @@ section {
   );
   opacity: 0;
   transition: opacity 0.4s;
+  pointer-events: none;
 }
 .service-card::after {
   content: "";
@@ -792,6 +798,11 @@ section {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s var(--ease);
+  pointer-events: none;
+}
+.service-card > * {
+  position: relative;
+  z-index: 1;
 }
 .service-card:hover {
   transform: translateY(-8px);
@@ -832,16 +843,170 @@ section {
   margin-bottom: 1.5rem;
 }
 
+/* ===================== SERVICE DETAIL PAGES ===================== */
+.service-page {
+  min-height: 100vh;
+  background: var(--bg);
+  --service-accent: var(--accent2);
+  --service-accent-soft: rgba(254, 205, 97, 0.1);
+  --service-accent-border: rgba(254, 205, 97, 0.28);
+}
+.service-hero {
+  min-height: calc(100vh - var(--nav-h));
+  padding-top: calc(var(--nav-h) + clamp(3rem, 7vw, 6rem));
+  overflow: hidden;
+}
+.service-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--muted2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.25s, transform 0.25s;
+}
+.service-back:hover {
+  color: var(--service-accent);
+  transform: translateX(-4px);
+}
+.service-page .tag {
+  color: var(--service-accent);
+}
+.service-page .tag::before {
+  background: var(--service-accent);
+}
+.service-page .section-title {
+  color: var(--service-accent);
+}
+.service-page .btn-primary {
+  background: var(--service-accent);
+  color: #0a0800;
+}
+.service-page .btn-primary:hover {
+  box-shadow: 0 12px 30px rgba(254, 205, 97, 0.35);
+}
+.service-page .btn-ghost {
+  color: var(--service-accent);
+  border-color: var(--service-accent-border);
+}
+.service-page .btn-ghost:hover {
+  background: var(--service-accent-soft);
+  border-color: var(--service-accent);
+}
+.service-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+.service-page-copy {
+  max-width: 760px;
+}
+.service-lead {
+  margin-top: 1.4rem;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.65;
+  color: var(--text);
+  max-width: 58ch;
+}
+.service-body {
+  margin-top: 1.2rem;
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: var(--muted2);
+  max-width: 68ch;
+}
+.service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.4rem;
+}
+.service-detail-card {
+  background: var(--bg2);
+  border: 1px solid var(--service-accent-border);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  position: relative;
+  overflow: hidden;
+}
+.service-detail-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0%, var(--service-accent-soft), transparent 55%);
+  pointer-events: none;
+}
+.service-page-icon {
+  margin-bottom: 1.4rem;
+}
+.service-page .service-icon {
+  background: var(--service-accent-soft);
+  color: var(--service-accent);
+}
+.service-detail-card h2 {
+  position: relative;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+.service-detail-card ul {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  list-style: none;
+}
+.service-detail-card li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  color: var(--muted2);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.service-detail-card li i {
+  margin-top: 0.25rem;
+  color: var(--service-accent);
+  font-size: 0.78rem;
+}
+.service-result {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--service-accent-border);
+  padding-top: 1.5rem;
+  max-width: 860px;
+}
+.service-result span {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--service-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.service-result p {
+  color: var(--muted2);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
 /* ===================== SKILLS ===================== */
 .skills-section {
   background: var(--bg2);
 }
 .skills-wrapper {
   display: grid;
-  grid-template-columns:  1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(3rem, 6vw, 6rem);
   margin-top: 3.5rem;
-  align-items: start;
+  align-items: stretch;
+}
+.skills-wrapper > .reveal {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Technical bars */
@@ -859,6 +1024,19 @@ section {
 .tech-bar {
   margin-bottom: 1.5rem;
 }
+.tech-bento-grid {
+  display: grid;
+  gap: 1rem;
+}
+.tech-bento-card {
+  align-items: stretch;
+  min-height: 94px;
+  width: 100%;
+  padding: 1.25rem;
+}
+.tech-bento-card .tech-bar-header {
+  width: 100%;
+}
 .tech-bar-header {
   display: flex;
   align-items: center;
@@ -874,6 +1052,19 @@ section {
 }
 .tech-bar-name i {
   font-size: 1.1rem;
+}
+.tech-icon-badge {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid currentColor;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 800;
+  line-height: 1;
 }
 .tech-bar-pct {
   font-family: var(--mono);
@@ -895,25 +1086,37 @@ section {
   box-shadow: 0 0 10px rgba(0, 180, 255, 0.5);
 }
 
+.skills-section .card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0;
+  font-size: 1rem;
+}
+.skills-section .magic-bento-card {
+  min-height: 150px;
+  border-radius: var(--radius);
+}
+.skills-section .magic-bento-card:nth-child(1),
+.skills-section .magic-bento-card:nth-child(5) {
+  grid-column: auto;
+}
+
 /* Radial / Pro skills */
 .pro-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(0, 1fr);
   gap: 1.5rem;
+  flex: 1;
 }
-.radial-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+/* Les cartes Pro Skills utilisent maintenant Magic Bento */
+/* .radial-card → les styles sont repris par .magic-bento-card dans MagicBento.css */
+/* On garde juste l'alignement centré pour les cercles SVG à l'intérieur */
+.magic-bento-card {
+  align-items: center;        /* centre le cercle horizontalement */
+  justify-content: center;    /* centre le cercle verticalement   */
+  gap: 0.75rem;               /* espace entre le cercle et le label */
   padding: 1.5rem 1rem;
-  transition: var(--trans);
-}
-.radial-card:hover {
-  border-color: rgba(0, 180, 255, 0.35);
-  transform: translateY(-5px);
 }
 .radial-svg-wrap {
   position: relative;
@@ -958,6 +1161,13 @@ section {
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+.radial-desc {
+  max-width: 18ch;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  text-align: center;
 }
 
 /* ===================== PROJECTS ===================== */
@@ -1205,7 +1415,6 @@ section {
   align-self: flex-start;
 }
 .form-success {
-  display: none;
   padding: 0.9rem 1.2rem;
   background: rgba(0, 255, 180, 0.07);
   border: 1px solid rgba(0, 255, 180, 0.3);
@@ -1213,6 +1422,15 @@ section {
   font-family: var(--mono);
   font-size: 0.82rem;
   color: var(--accent3);
+}
+.form-error {
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 80, 80, 0.08);
+  border: 1px solid rgba(255, 80, 80, 0.35);
+  border-radius: 10px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: #ff8a8a;
 }
 
 /* ===================== NAV SCROLL BTNS ===================== */
@@ -1299,7 +1517,14 @@ footer {
     grid-template-columns: 1fr;
   }
   .hero-photo-wrap {
-    display: none;
+    display: flex;
+    justify-content: center;
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  .hero-photo-ring {
+    width: clamp(160px, 45vw, 280px);
+    height: clamp(200px, 56vw, 340px);
   }
   .about-grid {
     grid-template-columns: 1fr;
@@ -1326,6 +1551,12 @@ footer {
   .join-grid {
     grid-template-columns: 1fr;
   }
+  .service-page-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-detail-card {
+    max-width: 680px;
+  }
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -1334,6 +1565,16 @@ footer {
 @media (max-width: 768px) {
   :root {
     --nav-h: 64px;
+  }
+  .hero {
+    text-align: center;
+  }
+  .hero-bio {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-socials {
+    justify-content: center;
   }
   .nav-links {
     display: none;
@@ -1364,6 +1605,19 @@ footer {
     width: 100%;
     justify-content: center;
   }
+  .service-actions {
+    flex-direction: column;
+  }
+  .service-actions .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 599px) {
+  .skills-section .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1376,6 +1630,78 @@ footer {
   .about-badge {
     display: none;
   }
+  .service-detail-card li {
+    grid-template-columns: 16px 1fr;
+  }
+}
+
+/* ═══ MAGIC BENTO — styles d'intégration dans pro-grid ═══ */
+
+/* La carte de base */
+.magic-bento-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  padding: 1.5rem 1rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+
+  /* Variables CSS pour l'effet de lueur — pilotées par JS */
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+  --glow-color: 0, 171, 240;
+}
+
+.magic-bento-card.tech-bento-card {
+  align-items: stretch;
+  min-height: 94px;
+  width: 100%;
+}
+
+.magic-bento-card.tech-bento-card .tech-bar-track {
+  width: 100%;
+}
+
+.magic-bento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* L'effet de lueur sur la bordure — s'active quand la souris s'approche */
+.magic-bento-card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.85)) 0%,
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.35)) 40%,
+    transparent 65%
+  );
+  border-radius: inherit;
+  /* L'astuce mask : rend visible uniquement la bordure, pas l'intérieur */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* La section bento doit être en position relative pour le spotlight */
+.bento-section {
+  position: relative;
+  user-select: none;
 }
 
 /* ===================== ACCESSIBILITY ===================== */
