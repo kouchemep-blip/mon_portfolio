@@ -1473,6 +1473,53 @@ section {
   border-radius: 30% 30% 50% 50%;
 }
 
+/* ===================== THEME TOGGLE ===================== */
+
+/* Le conteneur positionne le bouton en bas à gauche */
+.theme-toggle-wrap {
+  position: fixed;
+  left: 1.5rem;         /* même distance que scroll-nav à droite */
+  bottom: 2rem;         /* même hauteur que scroll-nav */
+  z-index: 300;         /* même niveau que scroll-nav */
+}
+
+/* Le bouton lui-même */
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg3);
+  color: var(--accent2);        /* jaune doré — couleur du soleil/lune */
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--accent2);   /* fond jaune au survol */
+  color: #060d14;               /* icône sombre sur fond jaune */
+  box-shadow: 0 6px 25px rgba(254, 205, 97, 0.35);
+  transform: scale(1.08);
+}
+
+/* Rotation de l'icône à l'apparition — petite animation premium */
+.theme-toggle-btn i {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.theme-toggle-btn:hover i {
+  transform: rotate(20deg);
+}
+
 /* ===================== FOOTER ===================== */
 footer {
   background: var(--bg3);
@@ -1722,6 +1769,56 @@ footer {
 .bento-section {
   position: relative;
   user-select: none;
+}
+
+/* ===================== LIGHT MODE ===================== */
+/*
+  Quand App.jsx ajoute la classe "light-mode" sur <html>,
+  toutes ces variables remplacent celles de :root.
+  Résultat : le site entier change de couleurs instantanément.
+*/
+
+html.light-mode {
+  --bg:     #f0f4f8;         /* fond principal — gris clair bleuté         */
+  --bg2:    #ffffff;         /* fond secondaire — blanc pur                */
+  --bg3:    #e2eaf2;         /* fond tertiaire — gris très clair           */
+  --border: rgba(0, 100, 180, 0.15);
+  --text:   #0d1f30;         /* texte principal — quasi noir               */
+  --muted:  #4a6070;         /* texte secondaire — gris bleu               */
+  --muted2: #607080;
+
+  /* Les couleurs d'accent restent les mêmes — on garde l'identité visuelle */
+  --accent:  #0090cc;
+  --accent2: #d4a800;
+  --accent3: #00c890;
+}
+
+/* Le fond noise-overlay est trop visible en mode clair → on l'atténue */
+html.light-mode .noise-overlay {
+  opacity: 0.025;
+}
+
+/* La navbar en mode clair */
+html.light-mode .nav.scrolled {
+  background: rgba(240, 244, 248, 0.9);
+  border-bottom-color: rgba(0, 100, 180, 0.12);
+}
+
+/* Le fond du Loader reste sombre même en mode clair
+   (le loader s'affiche avant que le thème soit lu) */
+html.light-mode .loader-root {
+  background: #060d14;
+}
+
+/* Les cartes Magic Bento en mode clair */
+html.light-mode .magic-bento-card {
+  background: #ffffff;
+  border-color: rgba(0, 100, 180, 0.15);
+}
+
+/* Les barres tech en mode clair */
+html.light-mode .tech-bar-track {
+  background: #d0dce8;
 }
 
 /* ===================== ACCESSIBILITY ===================== */

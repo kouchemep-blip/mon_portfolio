@@ -54,7 +54,7 @@ function JoinTyping() {
     return () => clearTimeout(timer.current)
   }, [text, deleting, wordIdx])
 
-  return <p className="join-subtitle">{text}</p>
+  return <p className="join-subtitle" translate='no'>{text}</p>
 }
 
 export default function Contact() {

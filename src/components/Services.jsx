@@ -28,20 +28,19 @@ const SERVICES = [
     icon: "fa fa-paint-brush",
     title: "UI/UX Design",
     slug: "ui-ux-design",
-    desc: "Conception d'interfaces claires, modernes et agreables a utiliser. Je travaille la hierarchie visuelle, les parcours utilisateurs et les details qui rendent une experience fluide.",
+    desc: "Designing clear, modern, and user-friendly interfaces. I work on visual hierarchy, user journeys, and the details that create a seamless experience.",
   },
   {
     icon: "fa fa-globe",
     title: "Web Design",
     slug: "web-design",
-    desc: "Creation de sites responsives, elegants et coherents avec votre image. L'objectif est d'obtenir une interface lisible, rapide a comprendre et adaptee a tous les ecrans.",
+    desc: "Creating responsive, elegant, and consistent websites that reflect your brand. The goal is to achieve a readable, easy-to-understand interface adapted to all screens.",
   },
   {
     icon: "fa fa-mobile-alt",
     title: "App Design",
     slug: "app-design",
-    desc: "Design d'applications mobiles simples a prendre en main, avec des ecrans organises, des interactions naturelles et une experience pensee pour l'usage quotidien.",
-  },
+    desc: "Design of easy-to-use mobile applications, with organized screens, natural interactions and an experience designed for everyday use.",  },
 ];
 
 export default function Services() {
@@ -55,7 +54,7 @@ export default function Services() {
         className={`section-title reveal${inView ? " up" : ""}`}
         id="services-title"
       >
-        Mes <span>Services</span>
+        My <span>Services</span>
       </h2>
 
       <div className="services-grid">
